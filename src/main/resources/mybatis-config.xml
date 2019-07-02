@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+     <!--配置别名-->
+    <typeAliases>
+        <package name="com.bean"/><!--通过package配置的别名就是类名-->
+    </typeAliases>
+    <!--添加分页支持-->
+    <plugins>
+    <!-- com.github.pagehelper为PageHelper类所在包名 -->
+    <plugin interceptor="com.github.pagehelper.PageInterceptor"/>
+    </plugins>
+    <!--加载sql映射文件-->
+    <mappers>
+        <mapper resource="com/mapper/DistrictMapper.xml"/>
+        <mapper resource="com/mapper/HouseMapper.xml"/>
+        <mapper resource="com/mapper/StreetMapper.xml"/>
+        <mapper resource="com/mapper/TypeMapper.xml"/>
+        <mapper resource="com/mapper/UsersMapper.xml"/>
+    </mappers>
+</configuration>

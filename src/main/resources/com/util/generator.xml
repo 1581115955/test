@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+  <classPathEntry location="D:\Maven\repository\mysql\mysql-connector-java\5.1.6\mysql-connector-java-5.1.6.jar" />
+    <!---->
+  <context id="Mysql2Tables" targetRuntime="MyBatis3">
+    <!---->
+    <commentGenerator>
+      <property name="suppressDate" value="true"/>
+      <property name="suppressAllComments" value="true"/>
+    </commentGenerator>
+
+    <!--连库四要素【必须】-->
+    <jdbcConnection
+        driverClass="com.mysql.jdbc.Driver"
+        connectionURL="jdbc:mysql://localhost:3306/houserent"
+        userId="root"
+        password="duanhui0">
+    </jdbcConnection>
+
+    <!--DB==>>java类型处理设置-->
+    <javaTypeResolver >
+      <property name="forceBigDecimals" value="false" />
+    </javaTypeResolver>
+
+    <!--javaBean-->
+    <javaModelGenerator targetPackage="com.bean" targetProject="src/main/java">
+      <property name="constructorBased" value="true"/>
+      <property name="enableSubPackages" value="true" />
+      <property name="trimStrings" value="true" />
+    </javaModelGenerator>
+
+    <!--DAO实现类-->
+    <sqlMapGenerator targetPackage="com.mapper"  targetProject="src/main/resources">
+      <property name="enableSubPackages" value="true" />
+    </sqlMapGenerator>
+
+    <!--DAO接口-->
+    <javaClientGenerator type="XMLMAPPER" targetPackage="com.mapper"  targetProject="src/main/java">
+      <property name="enableSubPackages" value="true" />
+    </javaClientGenerator>
+
+    <!--添加DB表-->
+    <!--<table tableName="house" enableInsert="true" enableCountByExample="false"
+           enableSelectByPrimaryKey="true" enableDeleteByPrimaryKey="true" enableUpdateByPrimaryKey="true"
+           enableSelectByExample="true" enableDeleteByExample="false" enableUpdateByExample="false">
+    </table>
+    <table tableName="street" enableInsert="true" enableCountByExample="false"
+           enableSelectByPrimaryKey="true" enableDeleteByPrimaryKey="true" enableUpdateByPrimaryKey="true"
+           enableSelectByExample="true" enableDeleteByExample="false" enableUpdateByExample="false">
+    </table>
+    <table tableName="type" enableInsert="true" enableCountByExample="false"
+           enableSelectByPrimaryKey="true" enableDeleteByPrimaryKey="true" enableUpdateByPrimaryKey="true"
+           enableSelectByExample="true" enableDeleteByExample="false" enableUpdateByExample="false">
+    </table>-->
+    <table tableName="users" enableInsert="true" enableCountByExample="false"
+           enableSelectByPrimaryKey="true" enableDeleteByPrimaryKey="true" enableUpdateByPrimaryKey="true"
+           enableSelectByExample="true" enableDeleteByExample="false" enableUpdateByExample="false">
+    </table>
+    <!--<table tableName="district" enableInsert="true" enableCountByExample="false"
+           enableSelectByPrimaryKey="true" enableDeleteByPrimaryKey="true" enableUpdateByPrimaryKey="true"
+           enableSelectByExample="true" enableDeleteByExample="false" enableUpdateByExample="false">
+    </table>-->
+  </context>
+</generatorConfiguration>

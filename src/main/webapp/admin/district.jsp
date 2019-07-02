@@ -31,7 +31,7 @@
 </div>
 <!--展示数据-->
 <table id="dg"></table>
-
+r
 <!--添加窗口内容填充-->
 <div id="AddDistrict" closed="true" buttons ="#AddDialogButtons" title="添加区域"
      style="width: 280px; height: 250px; padding: 10px 20px;" class="easyui-dialog">
